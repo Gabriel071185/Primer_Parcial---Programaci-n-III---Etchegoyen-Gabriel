@@ -1,7 +1,8 @@
 import { getCategories, PRODUCTS } from "../../../data/data";
-import type { Product } from "../../../types/product";
-import type { ICategory, CategoryFilter } from "../../../types/categoria";
+import type { CategoryFilter } from "../../../types/categoria";
 import {searchProductsByName, filterProductsByCategory } from "../../../utils/product.utils";
+import alertify from "alertifyjs";
+import "alertifyjs/build/css/alertify.min.css";
 
 
 const categoriesList = document.getElementById("categoriesList") as HTMLUListElement | null;
@@ -149,6 +150,7 @@ function setupEvents(): void {
 		}
 
 		//addToCart(id);
+		alertify.success("Producto añadido al carrito");
 	});
 }
 

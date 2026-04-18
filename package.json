@@ -12,5 +12,8 @@
     "@types/node": "^24.7.1",
     "typescript": "~5.8.3",
     "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "alertifyjs": "^1.14.0"
   }
 }

@@ -892,6 +892,16 @@ body {
 }
 
 /* ============================================
+   ALERTIFY - NOTIFICACIONES
+   ============================================ */
+.alertify-notifier .ajs-message {
+    text-align: center;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: var(--radius);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
