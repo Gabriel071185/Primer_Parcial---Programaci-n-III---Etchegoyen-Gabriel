@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Catálogo</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🍕 Food Store</h1>
+                <nav class="nav">
+                    <a href="../home/home.html" class="nav-link active">Catálogo</a>
+                    <a href="../cart/cart.html" class="nav-link">
+                        Carrito
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Sidebar con filtros -->
+                <aside class="sidebar">
+                    <div class="search-box">
+                        <h2 class="sidebar-title">Buscar</h2>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Buscar productos..."
+                        >
+                    </div>
+
+                    <div class="categories-box">
+                        <h2 class="sidebar-title">Categorías</h2>
+                        <ul class="categories-list" id="categoriesList">
+                            <li>
+                                <button class="category-btn active" data-category="all">
+                                    Todas las categorías
+                                </button>
+                            </li>
+                            <!-- Las categorías se cargarán dinámicamente -->
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Contenido principal -->
+                <section class="content">
+                    <div class="content-header">
+                        <h2 class="content-title">Nuestros Productos</h2>
+                        <p class="products-count" id="productsCount">0 productos</p>
+                    </div>
+
+                    <!-- Grid de productos -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Los productos se cargarán dinámicamente -->
+                    </div>
+
+                    <!-- Mensaje cuando no hay productos -->
+                    <div class="no-products" id="noProducts" style="display: none;">
+                        <div class="no-products-icon">🔍</div>
+                        <h3>No se encontraron productos</h3>
+                        <p>Intenta con otra búsqueda o categoría</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast de notificación -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Producto agregado al carrito</span>
+    </div>
+
+    <script type="module" src="home.ts"></script>
+</body>
+</html>

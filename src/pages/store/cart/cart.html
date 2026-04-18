@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Carrito</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🍕 Food Store</h1>
+                <nav class="nav">
+                    <a href="../home/home.html" class="nav-link">Catálogo</a>
+                    <a href="../cart/cart.html" class="nav-link active">
+                        Carrito
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="cart-header">
+                <h2 class="page-title">Mi Carrito</h2>
+                <button class="btn-clear" id="clearCartBtn" style="display: none;">
+                    🗑️ Vaciar carrito
+                </button>
+            </div>
+
+            <!-- Vista cuando el carrito tiene productos -->
+            <div class="cart-content" id="cartContent" style="display: none;">
+                <div class="cart-layout">
+                    <!-- Lista de productos -->
+                    <div class="cart-items">
+                        <div class="cart-items-header">
+                            <h3>Productos</h3>
+                            <span class="items-count" id="itemsCount">0 items</span>
+                        </div>
+                        
+                        <div class="items-list" id="itemsList">
+                            <!-- Los items del carrito se cargarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Resumen del pedido -->
+                    <aside class="cart-summary">
+                        <div class="summary-card">
+                            <h3 class="summary-title">Resumen del pedido</h3>
+                            
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span class="summary-label">Subtotal</span>
+                                    <span class="summary-value" id="subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Descuento</span>
+                                    <span class="summary-value discount">-$0.00</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row summary-total">
+                                    <span class="summary-label">Total</span>
+                                    <span class="summary-value" id="total">$0.00</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-checkout" id="checkoutBtn">
+                                Proceder al pago
+                            </button>
+
+                            <a href="home.html" class="btn-continue">
+                                ← Continuar comprando
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- Vista cuando el carrito está vacío -->
+            <div class="empty-cart" id="emptyCart">
+                <div class="empty-cart-content">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h3>Tu carrito está vacío</h3>
+                    <p>Agrega productos desde nuestro catálogo para comenzar tu compra</p>
+                    <a href="home.html" class="btn-primary">
+                        Ver productos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmar acción</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">¿Estás seguro?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modalCancel">Cancelar</button>
+                <button class="btn-danger" id="modalConfirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de notificación -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Acción realizada</span>
+    </div>
+
+    <script type="module" src="cart.ts"></script>
+</body>
+</html>
