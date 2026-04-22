@@ -4,11 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Store - Registro</title>
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 
-<body>
-    <h1>Hola desde el registro</h1>
+<body class="auth-page">
+    <main class="auth-main">
+        <div class="container auth-container">
+            <section class="auth-card">
+                <div class="auth-header">
+                    <p class="auth-kicker">Food Store</p>
+                    <h1 class="auth-title">Crear cuenta</h1>
+                    <p class="auth-subtitle">Regístrate para comenzar a comprar</p>
+                </div>
+
+                <form id="registerForm" class="auth-form">
+                    <div class="auth-field">
+                        <label for="name" class="auth-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="auth-input" autocomplete="off"
+                            placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="email" class="auth-label">Email</label>
+                        <input type="email" id="email" name="email" class="auth-input" autocomplete="off"
+                            placeholder="example@example.com" required>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="password" class="auth-label">Password</label>
+                        <input type="password" id="password" name="password" class="auth-input" autocomplete="off"
+                            placeholder="********" required>
+                    </div>
+
+                    <button type="submit" class="auth-submit">Registrarme</button>
+                </form>
+
+                <p class="auth-footer-text">
+                    ¿Ya tienes cuenta?
+                    <a href="../login/login.html" class="auth-link">Inicia sesión</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="./registro.ts"></script>
 </body>
 
 </html>

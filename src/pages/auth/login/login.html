@@ -4,34 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Store - Login</title>
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 
-<body>
-    <h1> Login</h1>
+<body class="auth-page">
+    <main class="auth-main">
+        <div class="container auth-container">
+            <section class="auth-card">
+                <div class="auth-header">
+                    <p class="auth-kicker">Food Store</p>
+                    <h1 class="auth-title">Iniciar sesión</h1>
+                    <p class="auth-subtitle">Ingresa con tu cuenta para continuar</p>
+                </div>
 
-    <form id="form">
+                <form id="form" class="auth-form">
+                    <div class="auth-field">
+                        <label for="email" class="auth-label">Email</label>
+                        <input type="email" id="email" name="email" class="auth-input" autocomplete="off"
+                            placeholder="example@example.com" required>
+                    </div>
 
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="off" placeholder="example@example.com">
+                    <div class="auth-field">
+                        <label for="password" class="auth-label">Password</label>
+                        <input type="password" id="password" name="password" class="auth-input" autocomplete="off"
+                            placeholder="********" required>
+                    </div>
+
+                    <button type="submit" class="auth-submit">Ingresar</button>
+                </form>
+
+                <p class="auth-footer-text">
+                    ¿No tienes cuenta?
+                    <a href="../registro/registro.html" class="auth-link">Regístrate</a>
+                </p>
+            </section>
         </div>
-        <div>
-            <label for="password">password</label>
-            <input type="password" id="password" name="password" autocomplete="off" placeholder="********">
-        </div>
-        <div>
-            <label for="rol">Rol</label>
-            <select name="rol" id="rol">
-                <option value="">Seleccione un rol</option>
-                <option value="client">Cliente</option>
-                <option value="admin">Admin</option>
-            </select>
-        </div>
-
-        <button type="submit">Ingresar</button>
-
-    </form>
+    </main>
 
     <script type="module" src="./login.ts"></script>
 </body>

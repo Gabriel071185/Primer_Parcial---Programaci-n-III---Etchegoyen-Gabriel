@@ -5,13 +5,22 @@ import { navigate } from "../../../utils/navigate";
 const form = document.getElementById("form") as HTMLFormElement;
 const inputEmail = document.getElementById("email") as HTMLInputElement;
 //const inputPassword = document.getElementById("password") as HTMLInputElement;
-const selectRol = document.getElementById("rol") as HTMLSelectElement;
+
+function resolveRoleFromEmail(email: string): Rol {
+  const normalized = email.trim().toLowerCase();
+
+  if (normalized.includes("admin")) {
+    return "admin";
+  }
+
+  return "client";
+}
 
 form.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
   const valueEmail = inputEmail.value;
   //const valuePassword = inputPassword.value;
-  const valueRol = selectRol.value as Rol;
+  const valueRol = resolveRoleFromEmail(valueEmail);
 
   if (valueRol === "admin") {
     navigate("/src/pages/admin/home/home.html");
