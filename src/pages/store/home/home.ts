@@ -1,6 +1,7 @@
 import { getCategories, PRODUCTS } from "../../../data/data";
 import type { CategoryFilter } from "../../../types/categoria";
 import {searchProductsByName, filterProductsByCategory } from "../../../utils/product.utils";
+import { addProductToCart, getCart, getCartItemsCount } from "../../../utils/cart.utils";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.min.css";
 
@@ -10,11 +11,19 @@ const searchInput = document.getElementById("searchInput") as HTMLInputElement |
 const productsGrid = document.getElementById("productsGrid") as HTMLDivElement | null;
 const noProducts = document.getElementById("noProducts") as HTMLDivElement | null;
 const productsCount = document.getElementById("productsCount") as HTMLParagraphElement | null;
+const cartBadge = document.getElementById("cartBadge") as HTMLSpanElement | null;
 const categories = getCategories();
 const products = PRODUCTS.filter((product) => !product.eliminado);
 
 let selectedCategory: CategoryFilter = "all";
 let searchTerm = "";
+
+function updateCartBadge(): void {
+	if (!cartBadge) {
+		return;
+	}
+	cartBadge.textContent = String(getCartItemsCount(getCart()));
+}
 
 
 
@@ -24,9 +33,7 @@ function renderCategories(): void {
 	if (!categoriesList) {
 		return;
 	}
-
 	categoriesList.innerHTML = "";
-
 	const allButtonMarkup = `
 		<li>
 			<button class="category-btn ${selectedCategory === "all" ? "active" : ""}" data-category="all">
@@ -34,7 +41,6 @@ function renderCategories(): void {
 			</button>
 		</li>
 	`;
-
 	const categoryButtonsMarkup = categories
 		.map(
 			(category) => `
@@ -149,11 +155,25 @@ function setupEvents(): void {
 			return;
 		}
 
-		//addToCart(id);
+		const selectedProduct = products.find((product) => product.id === id);
+
+		if (!selectedProduct) {
+			return;
+		}
+
+		const added = addProductToCart(selectedProduct);
+
+		if (!added) {
+			alertify.warning("No hay stock disponible para este producto");
+			return;
+		}
+
+		updateCartBadge();
 		alertify.success("Producto añadido al carrito");
 	});
 }
 
 renderCategories();
 renderProducts();
+updateCartBadge();
 setupEvents()
