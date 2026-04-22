@@ -4,12 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Store - Admin</title>
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 
 <body>
-    <h1>Hola desde la vista de admin</h1>
-    <button id="logoutButton">Logout</button>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Food Store Admin</h1>
+                <nav class="nav">
+                    <a href="../../store/home/home.html" class="nav-link">Ver tienda</a>
+                    <button id="logoutButton" class="admin-logout-btn">Cerrar sesión</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <div>
+                        <p class="admin-kicker">Control de inventario</p>
+                        <h2 class="admin-title">Productos sin stock</h2>
+                    </div>
+                    <span class="admin-stock-count" id="outOfStockCount">0 productos</span>
+                </div>
+
+                <div class="admin-empty" id="adminEmpty" style="display: none;">
+                    <p>No hay productos sin stock actualmente.</p>
+                </div>
+
+                <div class="admin-list" id="outOfStockList"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer-content">
+            <p class="site-footer-brand">Food Store</p>
+            <p class="site-footer-note">Programacion III - Etchegoyen Gabriel</p>
+        </div>
+    </footer>
+
     <script type="module" src="./home.ts"></script>
 </body>
 
