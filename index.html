@@ -1,17 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>Food Store - Bienvenido</title>
+  <link rel="stylesheet" href="/src/style.css" />
 </head>
 
-<body>
-  <script>
-    window.location.href = 'src/pages/auth/login/login.html'
-  </script>
+<body class="auth-page">
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">Food Store</h1>
+        <nav class="nav">
+          <a href="/src/pages/auth/login/login.html" class="nav-link">Iniciar sesión</a>
+          <a href="/src/pages/auth/registro/registro.html" class="nav-link">Registrarse</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main client-main">
+    <section class="client-hero auth-gateway-hero">
+      <div class="container client-hero-layout">
+        <article class="client-hero-copy auth-gateway-copy">
+          <span class="client-kicker">Bienvenido a Food Store</span>
+          <h2 class="client-title">Pedidos simples, rápidos y ricos</h2>
+          <p class="client-subtitle">
+            Entrá con tu cuenta o creá una nueva para empezar a explorar el catálogo,
+            gestionar tu carrito y seguir tu compra en segundos.
+          </p>
+
+          <div class="gateway-actions">
+            <a href="/src/pages/auth/login/login.html" class="client-cta">Iniciar sesión</a>
+            <a href="/src/pages/auth/registro/registro.html" class="gateway-secondary-cta">Crear cuenta</a>
+          </div>
+
+          <div class="gateway-metrics" aria-label="Resumen de catálogo">
+            <p class="gateway-metric">
+              <span id="productsCount">0</span>
+              productos
+            </p>
+            <p class="gateway-metric">
+              <span id="categoriesCount">0</span>
+              categorías
+            </p>
+          </div>
+        </article>
+
+        <div class="hero-collage-wrapper" aria-hidden="true">
+          <div class="hero-collage-glow"></div>
+          <div class="hero-collage" id="heroCollage"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer-content">
+      <p class="site-footer-brand">Food Store</p>
+      <p class="site-footer-note">Programacion III - Etchegoyen Gabriel</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>
