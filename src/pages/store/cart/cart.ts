@@ -7,10 +7,12 @@ import {
 	removeProductFromCart,
 	updateProductQuantity,
 } from "../../../utils/cart.utils";
+import { logout } from "../../../utils/auth";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.min.css";
 
 const cartBadge = document.getElementById("cartBadge") as HTMLSpanElement | null;
+const logoutButton = document.getElementById("logoutButton") as HTMLButtonElement | null;
 const clearCartBtn = document.getElementById("clearCartBtn") as HTMLButtonElement | null;
 const cartContent = document.getElementById("cartContent") as HTMLDivElement | null;
 const emptyCart = document.getElementById("emptyCart") as HTMLDivElement | null;
@@ -27,6 +29,10 @@ const modalCancel = document.getElementById("modalCancel") as HTMLButtonElement 
 const modalClose = document.getElementById("modalClose") as HTMLButtonElement | null;
 
 let confirmAction: (() => void) | null = null;
+
+logoutButton?.addEventListener("click", () => {
+	logout();
+});
 
 function formatCurrency(value: number): string {
 	return new Intl.NumberFormat("es-AR", {

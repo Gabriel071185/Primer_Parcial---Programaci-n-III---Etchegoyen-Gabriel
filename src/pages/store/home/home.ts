@@ -2,6 +2,7 @@ import { getCategories, PRODUCTS } from "../../../data/data";
 import type { CategoryFilter } from "../../../types/categoria";
 import {searchProductsByName, filterProductsByCategory } from "../../../utils/product.utils";
 import { addProductToCart, getCart, getCartItemsCount } from "../../../utils/cart.utils";
+import { logout } from "../../../utils/auth";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.min.css";
 
@@ -12,11 +13,16 @@ const productsGrid = document.getElementById("productsGrid") as HTMLDivElement |
 const noProducts = document.getElementById("noProducts") as HTMLDivElement | null;
 const productsCount = document.getElementById("productsCount") as HTMLParagraphElement | null;
 const cartBadge = document.getElementById("cartBadge") as HTMLSpanElement | null;
+const logoutButton = document.getElementById("logoutButton") as HTMLButtonElement | null;
 const categories = getCategories();
 const products = PRODUCTS.filter((product) => !product.eliminado);
 
 let selectedCategory: CategoryFilter = "all";
 let searchTerm = "";
+
+logoutButton?.addEventListener("click", () => {
+	logout();
+});
 
 function updateCartBadge(): void {
 	if (!cartBadge) {
