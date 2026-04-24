@@ -1,4 +1,4 @@
-# Proteger Rutas - Food Store
+# Evaluación 1 – Programación 3 - Food Store
 
 ## 1. Objetivo del proyecto
 Este proyecto implementa una aplicacion web utilizando TypeScript para gestionar:
