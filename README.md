@@ -17,8 +17,8 @@
       <h3>🛍️ Catálogo de Productos</h3>
       <p><em>Búsqueda y filtrado por categoría</em></p>
       <img src="https://github.com/user-attachments/assets/e5868200-9fa5-41f3-ad63-04fa0727180b"alt="Catálogo" width="600"/>
- 
-    </td>
+   </td>
+    
   </tr>
   <tr>
     <td align="center">
