@@ -1,5 +1,51 @@
 # Evaluación 1 – Programación 3 - Food Store
 
+## Entrega correspondiente al Primer Parcial de la materia "Programacion III" perteneciente a la Tecnicatura Universitaria en Programación a Distancia (TUPAD).
+
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <h3>🏠 Página de Inicio</h3>
+      <p><em>Pantalla principal con acceso a login/registro y catálogo</em></p>
+      <img src="https://github.com/user-attachments/assets/b34cb044-f2c3-4d90-b6c8-8bf2bbb216f3" alt="Inicio" width="600"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <h3>🛍️ Catálogo de Productos</h3>
+      <p><em>Búsqueda y filtrado por categoría</em></p>
+      <img src="https://github.com/user-attachments/assets/e5868200-9fa5-41f3-ad63-04fa0727180b"alt="Catálogo" width="600"/>
+ 
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <h3>🛒 Carrito de Compras</h3>
+      <p><em>Gestión completa del carrito con persistencia</em></p>
+      <img src="https://github.com/user-attachments/assets/d107e63b-0e2f-483e-9b73-3731ef2c630a" alt="Carrito" width="600"/>
+    </td>
+  </tr>
+</table>
+
+## ✨ Características Principales
+
+- 🔐 Sistema de autenticación completo (login/registro)
+- 👥 Gestión de roles (Admin/Cliente)
+- 🛒 Carrito de compras persistente con localStorage
+- 🔍 Búsqueda dinámica de productos
+- 🏷️ Filtrado por categorías
+- 📱 Diseño responsive (mobile, tablet, desktop)
+- 🔔 Notificaciones con AlertifyJS
+
+## 🎥 Video de Demostración
+
+[Ver video completo en YouTube](tu-link-aqui)
+
+
+
+
 ## 1. Objetivo del proyecto
 Este proyecto implementa una aplicacion web utilizando TypeScript para gestionar:
 - registro e inicio de sesion
