@@ -1,4 +1,4 @@
-import { checkAuhtUser, logout } from "../../../utils/auth";
+import { checkAuhtUser, logout, setupLogoNavigation } from "../../../utils/auth";
 import { PRODUCTS } from "../../../data/data";
 
 const buttonLogout = document.getElementById(
@@ -63,6 +63,7 @@ function renderOutOfStockProducts(): void {
 
 const initPage = () => {
   console.log("inicio de pagina");
+  setupLogoNavigation();
   checkAuhtUser(
     "/src/pages/auth/login/login.html",
     "/src/pages/client/home/home.html",

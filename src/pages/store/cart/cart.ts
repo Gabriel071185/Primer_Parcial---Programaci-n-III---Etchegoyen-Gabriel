@@ -7,7 +7,7 @@ import {
 	removeProductFromCart,
 	updateProductQuantity,
 } from "../../../utils/cart.utils";
-import { logout } from "../../../utils/auth";
+import { logout, protectRoute, setupLogoNavigation } from "../../../utils/auth";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.min.css";
 
@@ -29,6 +29,10 @@ const modalCancel = document.getElementById("modalCancel") as HTMLButtonElement 
 const modalClose = document.getElementById("modalClose") as HTMLButtonElement | null;
 
 let confirmAction: (() => void) | null = null;
+
+protectRoute("/src/pages/auth/login/login.html", "client", "/src/pages/admin/home/home.html");
+setupLogoNavigation();
+
 
 logoutButton?.addEventListener("click", () => {
 	logout();

@@ -1,4 +1,5 @@
 import type { IUser } from "../../../types/IUser";
+import { consumeAuthFlash } from "../../../utils/auth";
 import { saveUser } from "../../../utils/localStorage";
 import { navigate } from "../../../utils/navigate";
 import alertify from "alertifyjs";
@@ -14,6 +15,16 @@ const USERS_KEY = "usersData";
 const form = document.getElementById("form") as HTMLFormElement;
 const inputEmail = document.getElementById("email") as HTMLInputElement;
 const inputPassword = document.getElementById("password") as HTMLInputElement;
+
+const authFlash = consumeAuthFlash();
+
+if (authFlash) {
+  if (authFlash.type === "error") {
+    alertify.error(authFlash.message);
+  } else {
+    alertify.warning(authFlash.message);
+  }
+}
 
 function getStoredUsers(): StoredUser[] {
   const raw = localStorage.getItem(USERS_KEY);

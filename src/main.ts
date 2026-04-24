@@ -1,6 +1,7 @@
 import { PRODUCTS, getCategories } from "./data/data";
 import type { IUser } from "./types/IUser";
 import { navigate } from "./utils/navigate";
+import { setupLogoNavigation } from "./utils/auth";
 
 const heroCollage = document.getElementById("heroCollage") as HTMLDivElement | null;
 const productsCount = document.getElementById("productsCount") as HTMLSpanElement | null;
@@ -67,5 +68,6 @@ function renderMetrics(): void {
 }
 
 redirectIfLoggedIn();
+setupLogoNavigation();
 renderHeroCollage();
 renderMetrics();
